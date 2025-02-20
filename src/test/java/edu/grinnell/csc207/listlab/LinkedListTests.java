@@ -11,10 +11,11 @@ import net.jqwik.api.constraints.IntRange;
 import java.util.Random;
 
 public class LinkedListTests {
+
     /**
      * Tests that list is indeed empty when initialized
-     * 
-     */    
+     *
+     */
     @Test
     public void emptyListTest() {
         LinkedList list = new LinkedList();
@@ -23,8 +24,8 @@ public class LinkedListTests {
 
     /**
      * Tests that the add adds to the list and that size increase as it does
-     * 
-     */    
+     *
+     */
     @Test
     public void listAddSize10() {
         LinkedList list = new LinkedList();
@@ -35,10 +36,10 @@ public class LinkedListTests {
     }
 
     /**
-     * Tests that add adds the correct values to the list, and that get 
+     * Tests that add adds the correct values to the list, and that get
      * retrieves the correct values from the list
-     * 
-     */    
+     *
+     */
     @Test
     public void listAddGet21() {
         LinkedList list = new LinkedList();
@@ -51,10 +52,10 @@ public class LinkedListTests {
     }
 
     /**
-     * Tests that remove removes values from the list appropriately and that 
+     * Tests that remove removes values from the list appropriately and that
      * what get retrieves changes as things are removed
-     * 
-     */    
+     *
+     */
     @Test
     public void listRemoveGet16() {
         LinkedList list = new LinkedList();
@@ -77,8 +78,8 @@ public class LinkedListTests {
     /**
      * Tests that clear empties the list and that isEmpty finds the list to be
      * empty when it is
-     * 
-     */    
+     *
+     */
     @Test
     public void isListEmptyClear() {
         LinkedList list = new LinkedList();
@@ -96,8 +97,8 @@ public class LinkedListTests {
     /**
      * Tests that the appropriate indexes are returned for various searched for
      * values
-     * 
-     */    
+     *
+     */
     @Test
     public void indexOfList10() {
         LinkedList list = new LinkedList();
@@ -111,10 +112,10 @@ public class LinkedListTests {
     }
 
     /**
-     * Tests that contains successfully determines whether an element is in the 
+     * Tests that contains successfully determines whether an element is in the
      * list, even if it was in the list but was removed
-     * 
-     */    
+     *
+     */
     @Test
     public void removeContains() {
         LinkedList list = new LinkedList();
@@ -131,8 +132,8 @@ public class LinkedListTests {
     /**
      * Tests that insert succeeds in entering a value at an index in the list
      * when it is valid and catches thrown errors if not
-     * 
-     */    
+     *
+     */
     @Test
     public void testInsert() {
         LinkedList list = new LinkedList();
@@ -159,8 +160,8 @@ public class LinkedListTests {
 
     /**
      * Tests that toString produces the correct string
-     * 
-     */    
+     *
+     */
     @Test
     public void string1Through10() {
         LinkedList list = new LinkedList();
@@ -173,8 +174,8 @@ public class LinkedListTests {
     /**
      * Tests that when two lists are identical, equals returns true, and false
      * otherwise
-     * 
-     */    
+     *
+     */
     @Test
     public void equalLinkedLists() {
         LinkedList list1 = new LinkedList();
@@ -198,8 +199,8 @@ public class LinkedListTests {
 
     /**
      * Tests that every element of a two concatenated lists is correct
-     * 
-     */    
+     *
+     */
     @Test
     public void concatLinkedLists() {
         LinkedList list1 = new LinkedList();
@@ -221,10 +222,10 @@ public class LinkedListTests {
 
     /**
      * Checks that the size returns correct for all list sizes
-     * 
+     *
      * @param sz a randomly generated size of the list
      * @return whether or not the list size is correct
-     */    
+     */
     @Property
     public boolean listAddSize(@ForAll @IntRange(min = 0, max = 1000) int sz) {
         LinkedList list = new LinkedList();
@@ -237,10 +238,10 @@ public class LinkedListTests {
     /**
      * Checks whether a list of a randomly generated size returns the correct
      * value at a randomly generated index
-     * 
+     *
      * @param sz a randomly generated size of the list
      * @return whether or not the element at k is correct
-     */    
+     */
     @Property
     public boolean listAddGet(@ForAll @IntRange(min = 1, max = 1000) int sz) {
         LinkedList list = new LinkedList();
@@ -253,11 +254,11 @@ public class LinkedListTests {
 
     /**
      * Checks whether or not a value is successfully inserted then removed
-     * 
+     *
      * @param sz a randomly generated size of the list
      * @return whether or not the element was successfully inserted at k then
      * removed
-     */    
+     */
     @Property
     public boolean listRemoveInsert(@ForAll @IntRange(min = 1, max = 1000) int sz) {
         LinkedList list = new LinkedList();
