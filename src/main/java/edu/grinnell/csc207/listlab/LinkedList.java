@@ -224,6 +224,10 @@ public class LinkedList {
      */
     public LinkedList concat(LinkedList other) {
         LinkedList newLink = new LinkedList();
+        if (first == null) {
+            newLink.first = other.first;
+            return newLink;
+        }
         newLink.first = first;
         Node currentNode;
         for (currentNode = newLink.first; !(currentNode.next == null); currentNode = currentNode.next) {
