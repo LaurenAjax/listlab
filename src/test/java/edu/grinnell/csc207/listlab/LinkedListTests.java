@@ -122,7 +122,6 @@ public class LinkedListTests {
         for (int i = 0; i < 10; i++) {
             list.add(i);
         }
-        System.out.println(list.toString());
         assertEquals(true, list.contains(5));
         assertEquals(5, list.remove(5));
         assertEquals(false, list.contains(5));
@@ -190,7 +189,6 @@ public class LinkedListTests {
         for (int i = 5; i < 10; i++) {
             list2.add(i);
         }
-        list2.toString();
         assertEquals(true, list1.equals(list2));
         assertEquals(7, list2.remove(7));
         list2.insert(7, 20);
