@@ -11,10 +11,10 @@ import net.jqwik.api.constraints.IntRange;
 import java.util.Random;
 
 public class ArrayListTests {
-    
+
     /**
      * Tests that list is indeed empty when initialized
-     * 
+     *
      */
     @Test
     public void emptyListTest() {
@@ -24,7 +24,7 @@ public class ArrayListTests {
 
     /**
      * Tests that the add adds to the list and that size increase as it does
-     * 
+     *
      */
     @Test
     public void listAddSize10() {
@@ -34,11 +34,11 @@ public class ArrayListTests {
         }
         assertEquals(10, list.size());
     }
-    
+
     /**
-     * Tests that add adds the correct values to the list, and that get 
+     * Tests that add adds the correct values to the list, and that get
      * retrieves the correct values from the list
-     * 
+     *
      */
     @Test
     public void listAddGet21() {
@@ -50,11 +50,11 @@ public class ArrayListTests {
         assertEquals(10, list.get(9));
         assertEquals(21, list.get(20));
     }
-    
+
     /**
-     * Tests that remove removes values from the list appropriately and that 
+     * Tests that remove removes values from the list appropriately and that
      * what get retrieves changes as things are removed
-     * 
+     *
      */
     @Test
     public void listRemoveGet16() {
@@ -74,11 +74,11 @@ public class ArrayListTests {
             System.out.println("Out of Bounds");
         }
     }
-    
+
     /**
      * Tests that clear empties the list and that isEmpty finds the list to be
      * empty when it is
-     * 
+     *
      */
     @Test
     public void isListEmptyClear() {
@@ -93,11 +93,11 @@ public class ArrayListTests {
         list.clear();
         assertEquals(true, list.isEmpty());
     }
-    
+
     /**
      * Tests that the appropriate indexes are returned for various searched for
      * values
-     * 
+     *
      */
     @Test
     public void indexOfList10() {
@@ -110,11 +110,11 @@ public class ArrayListTests {
         assertEquals(9, list.indexOf(9));
         assertEquals(-1, list.indexOf(10));
     }
-    
+
     /**
-     * Tests that contains successfully determines whether an element is in the 
+     * Tests that contains successfully determines whether an element is in the
      * list, even if it was in the list but was removed
-     * 
+     *
      */
     @Test
     public void removeContains() {
@@ -127,11 +127,11 @@ public class ArrayListTests {
         assertEquals(false, list.contains(5));
         assertEquals(false, list.contains(15));
     }
-    
+
     /**
      * Tests that insert succeeds in entering a value at an index in the list
      * when it is valid and catches thrown errors if not
-     * 
+     *
      */
     @Test
     public void testInsert() {
@@ -156,10 +156,10 @@ public class ArrayListTests {
         assertEquals(7, list.get(9));
         assertEquals(21, list.get(4));
     }
-    
+
     /**
      * Tests that toString produces the correct string
-     * 
+     *
      */
     @Test
     public void string1Through10() {
@@ -169,11 +169,11 @@ public class ArrayListTests {
         }
         assertEquals("[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]", list.toString());
     }
-    
+
     /**
      * Tests that when two lists are identical, equals returns true, and false
      * otherwise
-     * 
+     *
      */
     @Test
     public void equalArrayLists() {
@@ -194,10 +194,10 @@ public class ArrayListTests {
         list2.insert(7, 20);
         assertEquals(false, list1.equals(list2));
     }
-    
+
     /**
      * Tests that every element of a two concatenated lists is correct
-     * 
+     *
      */
     @Test
     public void concatArrayLists() {
@@ -220,7 +220,7 @@ public class ArrayListTests {
 
     /**
      * Checks that the size returns correct for all list sizes
-     * 
+     *
      * @param sz a randomly generated size of the list
      * @return whether or not the list size is correct
      */
@@ -232,11 +232,11 @@ public class ArrayListTests {
         }
         return list.size() == sz;
     }
-    
+
     /**
      * Checks whether a list of a randomly generated size returns the correct
      * value at a randomly generated index
-     * 
+     *
      * @param sz a randomly generated size of the list
      * @return whether or not the element at k is correct
      */
@@ -249,10 +249,10 @@ public class ArrayListTests {
         int k = new Random().nextInt(sz);
         return list.get(k) == k;
     }
-    
+
     /**
      * Checks whether or not a value is successfully inserted then removed
-     * 
+     *
      * @param sz a randomly generated size of the list
      * @return whether or not the element was successfully inserted at k then
      * removed
