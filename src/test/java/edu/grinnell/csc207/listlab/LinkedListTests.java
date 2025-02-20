@@ -216,6 +216,11 @@ public class LinkedListTests {
         for (int i = 0; i < 5; i++) {
             assertEquals(i, list3.get(i + 10));
         }
+        list1.clear();
+        list3 = list1.concat(list2);
+        for (int i = 0; i < 5; i++) {
+            assertEquals(list2.get(i), list3.get(i));
+        }
     }
 
     /**
